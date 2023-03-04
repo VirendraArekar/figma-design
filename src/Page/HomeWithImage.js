@@ -114,7 +114,7 @@ const HomeWithImage = () => {
       <div className="h-100 pt-16  pb-2 px-8" style={{backgroundImage : `url(${BgImg})`}}>
         <div class="grid grid-cols-4 gap-8">
             <div className="bg-[#D9D9D9] h-96 grid place-items-center">
-               <img src={frameImg} />
+              <img src={frameImg} style={{width : '100%', height : '90%'}}/>
             </div>
             <div className="col-span-2  h-96">
               <div className="bg-[#D9D9D9] h-28">
@@ -158,9 +158,15 @@ const HomeWithImage = () => {
             <div className=" h-12 grid place-items-center">
                <div class="grid grid-cols-5 gap-8">
                   <div className="h-8 w-8"></div>
-                  <div className="bg-[#D9D9D9] h-8 w-8 cursor-pointer" onClick={() => setFrameImg(MickyImg)}></div>
-                  <div className="bg-[#D9D9D9] h-8 w-8 cursor-pointer" onClick={() => setFrameImg(PumaImg)}></div>
-                  <div className="bg-[#D9D9D9] h-8 w-8 cursor-pointer" onClick={() => setFrameImg(MogaliImg)}></div>
+                  <div className="bg-[#D9D9D9] h-8 w-8 cursor-pointer border-2 border-gray-300" onClick={() => setFrameImg(MickyImg)}>
+                    <img src={MickyImg}  style={{height :'100%', width : '100%'}}/>
+                  </div>
+                  <div className="bg-[#D9D9D9] h-8 w-8 cursor-pointer" onClick={() => setFrameImg(PumaImg)}>
+                    <img src={PumaImg}  style={{height :'100%', width : '100%'}}/>
+                  </div>
+                  <div className="bg-[#D9D9D9] h-8 w-8 cursor-pointer" onClick={() => setFrameImg(MogaliImg)}>
+                    <img src={MogaliImg}  style={{height :'100%', width : '100%'}}/>
+                  </div>
                   <div className="h-8 w-8">
                      <FiArrowRight className="text-[#D9D9D9] text-2xl cursor-pointer" onClick={() => {
                         setFrameImg(imgArr[Math.floor(Math.random() * imgArr.length)]);
