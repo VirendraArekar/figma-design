@@ -450,7 +450,7 @@ const Home = () => {
               
           </div>
         </nav>
-        <div className="h-100 pt-16  pb-2 px-8" >
+        <div className="h-100 pt-10  pb-2 px-8" >
           <div className="grid grid-cols-4 gap-8">
               <div className="bg-[#D9D9D9] h-96 grid ">
                 <img src={frameImg} style={{width : '100%', height : '100%'}} onClick={() => zoomImage(frameImg)} className="cursor-pointer" alt="detail product"/>
@@ -554,8 +554,8 @@ const Home = () => {
               </div>
           </div>
         </div>
-        <div className="w-screen bg-[#8E7E7E] h-12">
-            <div className="grid grid-cols-3 gap-8">
+        {/* <div className="w-screen bg-[#8E7E7E] h-12"> */}
+            <div className="grid grid-cols-3 gap-8 bg-[#8E7E7E] h-12">
               <div className="text-center text-white my-3 text-xs">TipForTheTrip</div>
               <div className="text-center text-white my-3 mx-40">
                   <div className="grid grid-cols-3 gap-2">
@@ -566,7 +566,7 @@ const Home = () => {
               </div>
               <div className="text-center text-white my-3 text-xs">Contact Us Here</div>
             </div>
-        </div>
+        {/* </div> */}
       </div>
       }
     </>

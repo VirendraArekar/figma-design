@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 import {BsSearch} from 'react-icons/bs';
-import BgImg from '../assets/images/bg-image.jpg';
+import BgImg from '../assets/images/bg-image.png';
 import {FiArrowRight,FiArrowLeft} from 'react-icons/fi';
 import { useNavigate, Link} from "react-router-dom";
 import { randomId } from "../Utility/Helper";
@@ -158,13 +158,13 @@ const HomeWithImage = () => {
     }
     
   return (
-    <>
+    <div className="w-full">
       {
         show &&
         <ViewImage imagePath={imagePath} show={show} setShow={setShow} />
       }
       {(screenSize?.width <= 480) ?
-      <div style={{backgroundImage : `url(${BgImg})`, backgroundSize : 'cover'}}>
+      <div style={{backgroundImage : `url(${BgImg})`, backgroundRepeat:"no-repeat" , backgroundSize:"contain"}} className="w-full" >
           <nav className="w-full bg-[#8E7E7E] text-white shadow">
               <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                   <div>
@@ -358,15 +358,15 @@ const HomeWithImage = () => {
           </div>
       </div>
       :
-      <div>
-        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-[#8E7E7E] bg-[url('../assets/images/nav image.png')]">
+      <div style={{backgroundImage : `url(${BgImg})`, backgroundRepeat:"no-repeat" , backgroundSize:"cover", width : '100%'}}>
+        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-[#8E7E7E]">
           <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
             <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start px-24 pt-1">
               <Link
                 className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
                 to="#"
               >
-                Tip For the Trip
+                Tip For the Trip 
               </Link>
               <button
                 className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -448,7 +448,7 @@ const HomeWithImage = () => {
               
           </div>
         </nav>
-        <div className="h-100 pt-16  pb-2 px-8" style={{backgroundImage : `url(${BgImg})`}}>
+        <div className="h-100 pt-10  pb-2 px-8" >
           <div className="grid grid-cols-4 gap-8">
               <div className="bg-[#D9D9D9] h-96 grid ">
                 <img src={frameImg} style={{width : '100%', height : '100%'}} onClick={() => zoomImage(frameImg)} alt="detail product"/>
@@ -552,8 +552,8 @@ const HomeWithImage = () => {
               </div>
           </div>
         </div>
-        <div className="w-screen bg-[#8E7E7E] h-12">
-            <div className="grid grid-cols-3 gap-8">
+        {/* <div className="w-full bg-[#8E7E7E] h-12"> */}
+            <div className="grid grid-cols-3 gap-8 bg-[#8E7E7E] h-12">
               <div className="text-center text-white my-3 text-xs">TipForTheTrip</div>
               <div className="text-center text-white my-3 mx-40">
                   <div className="grid grid-cols-3 gap-2">
@@ -564,10 +564,10 @@ const HomeWithImage = () => {
               </div>
               <div className="text-center text-white my-3 text-xs">Contact Us Here</div>
             </div>
-        </div>
+        {/* </div> */}
       </div>
       }
-    </>
+    </div>
   );
 }
 
