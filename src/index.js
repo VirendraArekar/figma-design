@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from './Page/Home';
 import HomeWithImage from './Page/HomeWithImage';
+import Product from './Page/Product';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,7 +15,8 @@ root.render(
     <BrowserRouter>
        <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/image" element={<HomeWithImage />}></Route>
+          <Route path="/home-with-image" element={<HomeWithImage />}></Route>
+          <Route path="/product/:id" element={<Product />}></Route>
         </Routes>
     </BrowserRouter>
   </React.StrictMode>
